@@ -1,0 +1,253 @@
+@@  konsol ga chiqarish
+console.log(1);
+bu javascript kod saytda dev toolsdagi consol da chiqadi va vscode ham run qisa bo'ladi
+
+@@ o'zgaruvchilar
+"let" deb yozsa karobka yaratiladi.
+ = bu ravno emas bu karobkaga narsa solish!
+let firstname = "Akbar";
+firstname = "Fazliddin";
+firstname dagi karobka ichidagi Akbar edi keyin uni Fazliddin ga o'zgartirdik!
+
+@@  o'zgaruvchilar
+Oz'garmas O'zgaruvchilar karobkalar
+"const" deb yozsak karobka paydo bo'ladi lekin u o'zgarmaydi
+const name = Akbar;
+name = Fazliddin; <-- shunaqa qilib bo'lmaydi!
+const o'zgaradi faqat ichidagi "Value" si o'zgaradi!
+
+@@ use strict
+yordam beradigan yani sovremmeniy kod yozish uchun
+"use strict";
+
+@@ undifined and null
+undifined va null farqi
+undifined = bitta karobka bor lekin uni ichida hech nima yo'q value yo'q
+
+@@  so'rash
+confirm = ("Siz 18 yoshdan kattamisiz?") <-- bu shunchaki ma'lumotni so'raydi
+yosh = confirm = ("Siz 18 yoshdan kattamisiz?") <-- bunday qilib biz foydalanuvchini ma'lumotini o'zimizga olamiz!
+
+@@ placeholder
+prompt("Ismiz Nima?")
+bu shu ismni kiritadigan joy qiberadi!
+
+const username = prompt("Ismiz Nima?");
+console.log(username);
+shu console da chiqarib beradi
+ bunga defoltniy chiqadigan qilish ham mumkin
+const username = prompt("Ismiz Nima?", "username"); mana defolt
+
+@@ saytga yozishs
+document.write(something);
+
+@@ "if" "if else " "else"
+const age = 15;
+
+if (age == 11) {
+  console.log("Assalomu alaykum siz 11 yoshsiz!")
+} else {
+  console.log("Assalomu alaykum siz 11 yoshdan kattasiz")
+}
+
+"if" dan keyin "if else "undan keyin "else"
+Natija: Assalomu alaykum siz 11 yoshdan kattasiz
+
+@@ switch
+
+const son = 20;
+
+switch(son) {
+  case 20 :
+    console.log("Ok");
+    break;
+  case 30 :
+    console.log("NOt Okay");
+    break;
+  default:
+    console.log("Nice")
+    
+}
+
+switch anniq holda ishlaydi shu uning farqi
+
+natija : Ok
+
+@@ while sikl
+let x = 0;
+
+while(x < 100) {
+  console.log(x)
+  x++;  
+}
+
+natija  = 100 gacha sanab chiqadi
+
+@@ sikl do
+let x = 0;
+
+do {
+  console.log(x)
+  x++;
+} while(x < 10);
+
+natija: 1 2 3 4 5 6 7 8 9 10
+
+@@ sikl for
+
+for(let i = 0; i <= 10; i++){
+  console.log(i)
+}
+
+@@ Funksiyalar
+"use strict";
+
+let number = 8;
+
+function Getext (text){
+console.log(text);
+number = 10;
+}
+
+Getext('Akbar');
+
+@@ array function
+"use strict";
+
+const arrayfunc = (c , d) => c + d;
+const plus = arrayfunc(20, 10);
+console.log(plus)
+
+Natija: 30
+
+@@ callback function
+"use strict";
+
+function PlayFootball (player, callback) {
+  console.log('name of player:' + player)
+  callback()
+}
+
+PlayFootball("Mo Salah", function(){
+ console.log("Mohammad Salah he shot 100 goals")
+});
+
+Natija: 
+name of player:Mo Salah
+Mohammad Salah he shot 100 goals
+
+@@ Obyektlar
+obyektni ichiga obyekt qisak bo'ladi
+"use strict";
+const odam ={
+  name: 'Akbar',
+  lastname: 'Hasanov',
+  age: 19,
+  wishes: [],
+  language: function() {},
+  mother:{
+    firstname: 'Guljahon',
+
+  }
+}
+console.log(odam)
+
+const obj = {
+  ism:"div",
+  width: 400,
+  height: 400,
+  colors: {
+    backgroundcolor: "Red",
+  }
+
+}
+console.log(obj)
+
+Natija: 
+{
+  name: 'Akbar',
+  lastname: 'Hasanov',
+  age: 19,
+  wishes: [],
+  language: [Function: language],
+  mother: { firstname: 'Guljahon' }
+}
+{
+  ism: 'div',
+  width: 400,
+  height: 400,
+  colors: { backgroundcolor: 'Red' }
+}
+
+@@ obyektlarni tez probejka qilib chiqish
+for (let key in obj) {
+  console.log(key)
+}
+
+@@ objektni ichidagi nimanidir yoqotish uchun
+delete obj.birorbirproperty
+
+@@ array metodlar
+pop metodi arr.pop(); bu oxiridan olib tashlaydi ro'yxatdan masalan [1,2,3] bo'lsa natija: [1,2]
+
+push metodi arr.push(5); bu sonlar royxatiga 5 ni qo'shib qo'yadi
+
+arr.length massivni uzunligi
+ 
+@@ obyektlarni ichidagi propertty larni property larini o'zgartirish
+"use strict";
+
+
+function CopyObj(obj){
+  let objcopy = {};
+  for (let key in obj) {
+    objcopy[key] = obj[key]
+  }
+  return objcopy
+}
+
+
+const bmw = {
+  color: "black",
+  IsBuy: false,
+}
+
+const Spark = CopyObj(bmw);
+Spark.color = "white";
+console.log (Spark)
+console.log (bmw)
+
+@@ Suhbatdagi Savollar
+1) qanday qiymat ko'rsatiladi?: 
+let x=3; alert(x++); bunda birinchi 3 ni chiqaradi keyin esa ++ 4 ni chiqaradi!
+
+2) let, var, const, ni qanday farqi bor?: const ga o'zgarmas son qo'yiladi constanta
+lekin var va let ni farqi nimada?: let va var ni farqi shundaki : biz qachonki varni ishlatsak nomni undan  yuqori ham ishlata olamiz
+yani y ni 12 - qatorda qilsak uni 11 qatorda ishga tushirishimiz mumkin. lekin let nikini qilganimizda unaqa qilib bumaydi va xato chiqadi
+shunday qilib xatoni bilib olishimiz mumkin
+
+3) null va undifined ma'lumot turlariga kiradimi?: ha albatta
+
+4) 8
+
+5) ularni yig'indisi nima?: [] + 1 + 2; type of ni ishlatsak string chiqadi va string larni bir biriga qo'shilsa 
+matnlarni qo'shib chiqadi so'zlarni va javob: = 12 = 1+2 = 12
+
+va boshqalar
+
+@@ Sayt bilan ishlash
+const wrapper = document.querySelector ("anything");
+
+@@ holatlar  onclick va boshqalar
+const btn = document.querySelector("#btn");
+
+
+const callfunc = () => {
+  alert("Jama axmoq")
+}
+
+btn.addEventListener('click', callfunc)
+
+bu knopkani bosganda jama axmoq deb chiqaradi
+
+
